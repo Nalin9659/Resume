@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nalin Patel - Amadeus Junior Software Engineer Boarding Pass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .boarding-pass-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            width: 100%;
+            border: 2px dashed #cbd5e1; /* Dashed border for tear-off effect */
+        }
+        .header-section {
+            background-color: #2b6cb0; /* Amadeus blue */
+            color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #cbd5e1;
+        }
+        .header-section h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .header-section .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .main-info-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 40px;
+            gap: 30px;
+        }
+        .info-block {
+            flex: 1 1 calc(50% - 15px); /* Two columns on larger screens */
+            background-color: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .info-block h3 {
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .info-block p, .info-block ul {
+            font-size: 0.95rem;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .info-block ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-block ul li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .info-block ul li::before {
+            content: '✈️'; /* Airplane emoji for bullet points */
+            margin-right: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .info-block a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .info-block a:hover {
+            text-decoration: underline;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            background-color: #e0f2f7; /* Light blue */
+            color: #2b6cb0;
+            padding: 6px 12px;
+            border-radius: 9999px; /* Pill shape */
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        .project-section {
+            padding: 30px 40px;
+            border-top: 2px dashed #cbd5e1;
+            background-color: #ecf3f8;
+        }
+        .project-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .project-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        .project-card span {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-left: 10px;
+        }
+        .project-card ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .footer-section {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 2px dashed #cbd5e1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-info-section {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+            .info-block {
+                flex: 1 1 100%;
+            }
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 20px;
+            }
+            .header-section h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            .header-section .logo {
+                font-size: 1.2rem;
+            }
+            .project-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="boarding-pass-container">
+        <div class="header-section">
+            <div class="logo">AMADEUS Airlines</div>
+            <h1>BOARDING PASS</h1>
+            <div>👨‍✈️ Junior Software Development Engineer</div>
+        </div>
+
+        <div class="main-info-section">
+            <!-- Passenger/Candidate Details -->
+            <div class="info-block">
+                <h3>Passenger Name:</h3>
+                <p class="font-bold text-xl uppercase">NALIN PATEL</p>
+                <h3 class="mt-4">Contact Gateway:</h3>
+                <p>📞 07587395519</p>
+                <p>📧 <a href="mailto:pnalin91@gmail.com">pnalin91@gmail.com</a></p>
+                <p>🔗 <a href="LINKEDIN_URL" target="_blank">LinkedIn Profile</a></p>
+                <p>💻 <a href="https://github.com/Nalin9659" target="_blank">GitHub Repository</a></p>
+            </div>
+
+            <!-- Flight Summary / Professional Objective -->
+            <div class="info-block">
+                <h3>Journey Objective (Summary):</h3>
+                <p>A dedicated Software Engineering postgraduate passionate about problem-solving, robust software design, and continuous learning. My hands-on experience in full-stack applications with React, Flask, and Python, coupled with a strong academic foundation, enables me to thrive in collaborative, Agile environments. Eager to enhance global travel experiences through innovative technology, aligning perfectly with Amadeus's mission.</p>
+                <h3 class="mt-4">Cabin Crew Expertise (Core Competencies):</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Agile & Scrum</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Rapid Learning</span>
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Growth Mindset</span>
+                    <span class="skill-tag">Version Control</span>
+                    <span class="skill-tag">Clear Communication</span>
+                    <span class="skill-tag">Detail Orientation</span>
+                </div>
+            </div>
+
+            <!-- Technical Manifest / Skills -->
+            <div class="info-block">
+                <h3>Technical Manifest (Skills):</h3>
+                <ul>
+                    <li>**Programming Languages:** Python (Advanced), JavaScript (ES6+), HTML5, CSS3, TypeScript.</li>
+                    <li>**Frameworks & Libraries:** React.js, Angular, Node.js, Flask, Django, Bootstrap, Tailwind CSS.</li>
+                    <li>**Databases & APIs:** MySQL (RDBMS/SQL), Firebase (NoSQL), Postman (API Testing).</li>
+                    <li>**CI/CD & Tools:** Visual Studio Code, Jira, Git, GitHub Actions, Vercel, Render.</li>
+                    <li>**Testing:** Cypress (E2E Testing), Unit Testing.</li>
+                </ul>
+                <p class="mt-2 text-sm text-gray-600"><em>(Willingness to learn C/C++/Java for new challenges.)</em></p>
+            </div>
+
+            <!-- Departure Gates / Education & Certifications -->
+            <div class="info-block">
+                <h3>Departure Gates (Education):</h3>
+                <p class="font-medium">MSc: Software Engineering</p>
+                <p class="text-gray-700">University of West London, London, UK | Graduated: 09/2023</p>
+                <ul class="mt-2">
+                    <li>Deep knowledge of software architecture, cloud computing.</li>
+                    <li>Expertise in Agile project management, software testing.</li>
+                </ul>
+                <p class="font-medium mt-4">BSc: Computer Science</p>
+                <p class="text-gray-700">Gujarat Technological University, Gujarat, India | Graduated: 01/2022</p>
+                <ul class="mt-2">
+                    <li>Strong foundational programming skills & data structures.</li>
+                    <li>Collaborated on workflows using Git for version control.</li>
+                </ul>
+                <h3 class="mt-4">License Endorsements (Certifications):</h3>
+                <ul>
+                    <li>Master Python Programming, Sarah Academy | 01/2025</li>
+                    <li>Front-end Development, Sarah Academy | 01/2024</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Flight Itinerary / Projects -->
+        <div class="project-section">
+            <h2>Flight Itinerary (Key Projects)</h2>
+            <div class="project-card">
+                <h4>🍔 Nexus Food Platform <span class="text-gray-500">| Full-Stack Web Application | 01/2024 – Present</span></h4>
+                <p class="text-sm mb-2 text-gray-600"><em>Destination: Enhancing Food Service Operations</em></p>
+                <ul>
+                    <li>Engineered and deployed robust, scalable RESTful APIs using **Flask (Python)** and **MySQL** for efficient menu and order management.</li>
+                    <li>Developed a highly responsive and intuitive user interface with **React.js** and **Tailwind CSS**, emphasizing mobile-first design.</li>
+                    <li>Implemented secure **JWT-based authentication** and granular role-based access control.</li>
+                    <li>Orchestrated continuous integration and deployment (CI/CD) pipelines using **GitHub Actions**, deploying frontend to **Vercel** and backend to **Render**.</li>
+                    <li>Actively participated in **Agile sprint planning**, conducted thorough **code reviews**, and contributed to architectural decisions.</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h4>To-Do List Application <span class="text-gray-500">| Full-Stack Web Application | 01/2024 – 01/2025</span></h4>
+                <p class="text-sm mb-2 text-gray-600"><em>Destination: Streamlined Task Management</em></p>
+                <ul>
+                    <li>Designed and built a complete full-stack To-Do List app, leveraging **Flask (Python)** for backend logic, **MySQL** for data persistence, and **HTML/CSS** for UI.</li>
+                    <li>Integrated secure user authentication, allowing individuals to manage personalized task lists efficiently.</li>
+                    <li>Managed user data and task states within MySQL, showcasing proficiency in database interactions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <p>Your journey with Amadeus is about to begin. Welcome Aboard!</p>
+            <p class="mt-1">Nalin Patel - Ready for Take-off 🚀</p>
+        </div>
+    </div>
+</body>
+</html>
